@@ -22,12 +22,11 @@ class Complaint(models.Model):
     subject = models.CharField("Subject", max_length=25, null=False, blank=False)
     message = models.CharField("Message", max_length=1000, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    customer = models.ForeignKey(
-        to='user.Customer', verbose_name="Customer", on_delete=models.CASCADE, null=False)
+    user_email = models.EmailField("Email", null=False, blank=False)
 
 
     def __str__(self):
-        return f"{self.customer.user.first_name} {self.customer.user.last_name}: {self.subject}"
+        return f"{self.subject} - {self.created_at.strftime('%Y-%m-%d %H:%M:%S')}"
 
     class Meta:
         verbose_name = "Complaint"
