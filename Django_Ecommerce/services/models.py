@@ -18,25 +18,6 @@ class Bonus (models.Model):
 
 
 
-
-
-# class Complaint(models.Model):
-#     title = models.CharField("Title", max_length=100, null=False, blank=False)
-#     description = models.TextField("Description", max_length=1800, null=False, blank=False)
-#     customer = models.ForeignKey(
-#         to='user.Customer', verbose_name="Customer", on_delete=models.CASCADE, null=False, blank=False)
-
-
-#     def __str__(self):
-#         return self.title + ": " + self.description
-
-#     class Meta:
-#         verbose_name = "Complaint"
-#         verbose_name_plural = "Complaint"
-
-
-
-
 class Complaint(models.Model):
     subject = models.CharField("Subject", max_length=25, null=False, blank=False)
     message = models.CharField("Message", max_length=1000, null=False, blank=False)
@@ -210,52 +191,6 @@ class ShoppingCart_Items(models.Model):
     price = models.FloatField("Price", null=False, blank=False)
     
     
-    
-# class Order(models.Model):
-#     created_at = models.DateTimeField(auto_now_add=True, null=False, blank=False)
-
-# class Order(models.Model):
-#     PAYMENT_METHOD_CHOICES = [
-#         ('cash', 'Cash'),
-#         ('credit_card', 'Credit Card'),
-#         ('bonus', 'Bonus'),
-#     ]
-    
-#     STATUS_CHOICES = [
-#         ('preparing', 'Preparing'),  # قيد التجهيز
-#         ('shipped', 'Shipped'),      # تم الشحن
-#         ('delivered', 'Delivered'),   # تم التوصيل
-#     ]
-
-#     Very_Poor, Poor, Fair, Good, Very_Good = "Very Poor", "Poor", "Fair", "Good", "Very Good"
-#     EVALUATE_CHOICES = [
-#         (Very_Poor, "Very Poor"),
-#         (Poor, "Poor"),
-#         (Fair, "Fair"),
-#         (Good, "Good"),
-#         (Very_Good, "Very Good"),
-#     ]
-
-#     id_order = models.AutoField(primary_key=True)
-#     order_date = models.DateTimeField(auto_now_add=True)
-#     start_date = models.DateField(null=True, blank=True)
-#     end_date = models.DateField(null=True, blank=True)
-#     total_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    
-#     payment_status = models.BooleanField(default=False, help_text="Indicates whether the payment has been completed.") # e.g., 'Paid', 'Pending'
-    
-#     payment_method = models.CharField(max_length=50, choices=PAYMENT_METHOD_CHOICES)
-#     status = models.CharField(max_length=50, choices=STATUS_CHOICES)  # Updated to use choices for status
-#     user_rating = models.IntegerField(null=True, blank=True)  # Rating from 1 to 5
-#     id_cart_product = models.ForeignKey(Product, on_delete=models.CASCADE)  # Link to products
-#     id_address = models.ForeignKey(Address, on_delete=models.CASCADE)  # Link to address
-
-#     evaluate = models.CharField("Evaluate service", max_length=50, default=None, null=True, blank=True, choices=EVALUATE_CHOICES)  # Updated with choices for evaluation
-
-#     def __str__(self):
-#         return f"Order {self.id_order} - Total: {self.total_amount}"
-
-
 
 class Order(models.Model):
     PAYMENT_METHOD_CHOICES = [
