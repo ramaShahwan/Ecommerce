@@ -22,7 +22,7 @@ class Complaint(models.Model):
     subject = models.CharField("Subject", max_length=25, null=False, blank=False)
     message = models.CharField("Message", max_length=1000, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    user_email = models.EmailField("Email", null=False, blank=False)
+    user_email = models.EmailField("Email", null=True, blank=True)
 
 
     def __str__(self):
@@ -141,19 +141,19 @@ class Product(models.Model):
 
 
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
 
 class CreditCard(models.Model):
     card_number = models.CharField("Card Number", max_length=19, null=False, blank=False)
     cardholder_name = models.CharField("Cardholder Name", max_length=255, null=False, blank=False)
     expiration_date = models.DateField("Expiration Date", null=False, blank=False)
-    cvv = models.CharField("CVV", max_length=4, null=False, blank=False)
+    cvv = models.CharField("CVV", max_length=4, null=False, blank=False,
+                           validators=[RegexValidator(r'^\d{3,4}$', message="CVV must be 3 or 4 digits long and contain only numbers.")])
     billing_address = models.CharField("Billing Address", max_length=255, null=False, blank=False)
     customer = models.ForeignKey(
         to='user.Customer', verbose_name="Customer", on_delete=models.CASCADE, null=False, blank=False)
+    balance = models.DecimalField("Balance", max_digits=10, decimal_places=2, default=0.00, null=False, blank=False)  # New field for balance
 
-    def clean(self):
-        if not self.cvv.isdigit() or len(self.cvv) not in [3, 4]:
-            raise ValidationError("CVV must be 3 or 4 digits long and contain only numbers.")
 
     def __str__(self):
         return f"{self.cardholder_name} - {self.card_number[-4:]}"

@@ -126,6 +126,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Make sure this is correct for your provider
+
+EMAIL_PORT = 587  # Common port for SMTP with TLS
+EMAIL_USE_TLS = True  # Enable TLS
+EMAIL_HOST_USER = 'ecommerceplatformsmarttechsolu@gmail.com'  # Replace with your email
+EMAIL_HOST_PASSWORD = 'clgx nhhk wiwo tdpm'  # Replace with your email password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": " SmartTech Solutions Platform Admin",

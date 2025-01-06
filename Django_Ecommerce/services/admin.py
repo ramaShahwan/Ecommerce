@@ -9,8 +9,8 @@ class BonusAdmin(admin.ModelAdmin):
 
 # Customizing the Complaint Admin
 class ComplaintAdmin(admin.ModelAdmin):
-    list_display = ('customer', 'subject', 'created_at')
-    search_fields = ('customer__user__first_name', 'customer__user__last_name', 'subject')
+    list_display = ('user_email', 'subject', 'created_at')
+    search_fields = ('user_email', 'subject')
     ordering = ('created_at',)
 
 # Customizing the Address Admin

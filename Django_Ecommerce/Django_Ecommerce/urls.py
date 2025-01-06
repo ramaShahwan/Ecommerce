@@ -30,7 +30,7 @@ admin.site.index_title = 'SmartTech Solutions Platform Administration'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('User/', include('user.urls')),
-    #path('Service/', include('services.urls')),
+    path('Service/', include('services.urls')),
 ]
 
 
