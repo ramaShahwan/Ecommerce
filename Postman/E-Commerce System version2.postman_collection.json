@@ -1,0 +1,938 @@
+{
+	"info": {
+		"_postman_id": "9f80045c-7663-4a5a-99ce-004b5257dcfd",
+		"name": "E-Commerce System version2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30173061"
+	},
+	"item": [
+		{
+			"name": "View brand-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/Service/api/brands/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"brands",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View category-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/Service/api/categories/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"street\": \"Al-Mazzeh Street\",\r\n    \"neighborhood\": \"Al-Mazzeh\",\r\n    \"building_number\": \"23\",\r\n    \"city\": \"Damascus\",\r\n    \"state\": \"Damascus\",\r\n    \"postal_code\": \"12345\",\r\n    \"country\": \"Syria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/Service/api/customers/3/add-address/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"customers",
+						"3",
+						"add-address",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit specific address ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"street\": \"Al-Muhajirin Street\",\r\n    \"neighborhood\": \"Al-Muhajirin\",\r\n    \"building_number\": \"45\",\r\n    \"city\": \"Damascus\",\r\n    \"state\": \"Damascus\",\r\n    \"postal_code\": \"67890\",\r\n    \"country\": \"Syria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/Service/api/customers/2/edit-address/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"customers",
+						"2",
+						"edit-address",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Display addresses of specific customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/Service/api/customers/1/addresses/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"customers",
+						"1",
+						"addresses",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Display addresses of specific customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/Service/api/customers/1/addresses/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"customers",
+								"1",
+								"addresses",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 05 Jan 2025 16:02:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "538"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"street\": \"Al-Mazzeh Street\",\n        \"neighborhood\": \"Al-Mazzeh\",\n        \"building_number\": \"23\",\n        \"city\": \"Damascus\",\n        \"state\": \"Damascus\",\n        \"postal_code\": \"12345\",\n        \"country\": \"Syria\",\n        \"customer\": 1\n    },\n    {\n        \"id\": 2,\n        \"street\": \"Al-Muhajirin Street\",\n        \"neighborhood\": \"Al-Muhajirin\",\n        \"building_number\": \"45\",\n        \"city\": \"Damascus\",\n        \"state\": \"Damascus\",\n        \"postal_code\": \"67890\",\n        \"country\": \"Syria\",\n        \"customer\": 1\n    },\n    {\n        \"id\": 3,\n        \"street\": \"Al-Mazzeh Street\",\n        \"neighborhood\": \"Al-Mazzeh\",\n        \"building_number\": \"23\",\n        \"city\": \"Damascus\",\n        \"state\": \"Damascus\",\n        \"postal_code\": \"12345\",\n        \"country\": \"Syria\",\n        \"customer\": 1\n    }\n]"
+				},
+				{
+					"name": "Display addresses of specific customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/Service/api/customers/2/addresses/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"customers",
+								"2",
+								"addresses",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 05 Jan 2025 16:05:47 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"No addresses found for this customer.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Specific Address",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/Service/api/customers/3/delete-address/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"customers",
+						"3",
+						"delete-address",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add CreditCard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Fatima Al-Sayed\",\r\n    \"expiration_date\": \"2026-05-31\",\r\n    \"cvv\": \"444\",\r\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/Service/api/customers/1/credit-cards/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"customers",
+						"1",
+						"credit-cards",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add CreditCard",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Fatima Al-Sayed\",\r\n    \"expiration_date\": \"2026-05-31\",\r\n    \"cvv\": \"456\",\r\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/Service/api/customers/1/credit-cards/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"customers",
+								"1",
+								"credit-cards",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 05 Jan 2025 16:14:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"card_number\": \"9876543210123456\",\n    \"cardholder_name\": \"Fatima Al-Sayed\",\n    \"expiration_date\": \"2026-05-31\",\n    \"cvv\": \"456\",\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\",\n    \"customer\": 1\n}"
+				},
+				{
+					"name": "Add CreditCard",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Fatima Al-Sayed\",\r\n    \"expiration_date\": \"2026-05-31\",\r\n    \"cvv\": \"444a\",\r\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/Service/api/customers/1/credit-cards/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"customers",
+								"1",
+								"credit-cards",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 05 Jan 2025 16:22:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cvv\": [\n        \"CVV must be 3 or 4 digits long and contain only numbers.\"\n    ]\n}"
+				},
+				{
+					"name": "Add CreditCard",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Fatima Al-Sayed\",\r\n    \"expiration_date\": \"2026-05-31\",\r\n    \"cvv\": \"4445241\",\r\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/Service/api/customers/1/credit-cards/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"customers",
+								"1",
+								"credit-cards",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 05 Jan 2025 16:24:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cvv\": [\n        \"CVV must be 3 or 4 digits long and contain only numbers.\",\n        \"Ensure this field has no more than 4 characters.\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Display credit cards of specific customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/Service/api/customers/1/credit-cards-list/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"customers",
+						"1",
+						"credit-cards-list",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Display credit cards of specific customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/Service/api/customers/2/credit-cards-list/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"customers",
+								"2",
+								"credit-cards-list",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 Jan 2025 08:24:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"No credit cards found for this customer.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit credit-card",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Amina Al-Omari\",\r\n    \"expiration_date\": \"2027-12-31\",\r\n    \"cvv\": \"5255\",\r\n    \"billing_address\": \"789 Al-Muhajirin, Damascus, Syria\"\r\n\r\n    // \"balance\" read only\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/Service/api/credit-cards/2/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"credit-cards",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit credit-card",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Amina Al-Omari\",\r\n    \"expiration_date\": \"2027-12-31\",\r\n    \"cvv\": \"585255\",\r\n    \"billing_address\": \"789 Al-Muhajirin, Damascus, Syria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/Service/api/credit-cards/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"credit-cards",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 Jan 2025 08:25:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cvv\": [\n        \"CVV must be 3 or 4 digits long and contain only numbers.\",\n        \"Ensure this field has no more than 4 characters.\"\n    ]\n}"
+				},
+				{
+					"name": "Edit credit-card",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Amina Al-Omari\",\r\n    \"expiration_date\": \"2027-12-31\",\r\n    \"cvv\": \"5255\",\r\n    \"billing_address\": \"789 Al-Muhajirin, Damascus, Syria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/Service/api/credit-cards/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"credit-cards",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 Jan 2025 08:26:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"card_number\": \"9876543210123456\",\n    \"cardholder_name\": \"Amina Al-Omari\",\n    \"expiration_date\": \"2027-12-31\",\n    \"cvv\": \"5255\",\n    \"billing_address\": \"789 Al-Muhajirin, Damascus, Syria\",\n    \"customer\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete credit-card",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/Service/api/delete-credit-cards/3/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"Service",
+						"api",
+						"delete-credit-cards",
+						"3",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete credit-card",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/Service/api/delete-credit-cards/3/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"Service",
+								"api",
+								"delete-credit-cards",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 Jan 2025 14:04:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "Allow",
+							"value": "DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Credit card deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
