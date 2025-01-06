@@ -16,7 +16,7 @@ urlpatterns = [
     path('api/customers/<int:customer_id>/credit-cards/', AddCreditCardAPIView.as_view(), name='add-credit-card'),
     path('api/credit-cards/<int:credit_card_id>/', EditCreditCardAPIView.as_view(), name='edit-credit-card'),
     path('api/customers/<int:customer_id>/credit-cards-list/', CustomerCreditCardsAPIView.as_view(), name='list-customer-credit-cards'),
-    
+    path('api/delete-credit-cards/<int:credit_card_id>/', DeleteCreditCardAPIView.as_view(), name='delete-credit-card'),    
     
     
     

@@ -23,3 +23,8 @@ class CreditCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = CreditCard
         fields = '__all__'
+    def update(self, instance, validated_data):
+        # Remove balance from the validated data if it exists
+        validated_data.pop('balance', None)
+        # Call the parent update method to update the instance
+        return super().update(instance, validated_data)
