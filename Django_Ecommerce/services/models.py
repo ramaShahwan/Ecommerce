@@ -48,7 +48,9 @@ class Address(models.Model):
     neighborhood = models.CharField(max_length=100, verbose_name="Neighborhood", null=True, blank=True)
     building_number = models.CharField(max_length=50, verbose_name="Building Number", null=True, blank=True)
     city = models.CharField(max_length=100, verbose_name="City", null=False, blank=False)
-    state = models.CharField(max_length=100, verbose_name="State/Province", null=False, blank=False)  # Can be used for regions 
+    #state = models.CharField(max_length=100, verbose_name="State/Province", null=False, blank=False)  # Can be used for regions 
+    description = models.TextField("Description", max_length=5000, null=True, blank=True)
+
     postal_code = models.CharField(max_length=20, verbose_name="Postal Code", null=False, blank=False)
     country = models.CharField(max_length=100, verbose_name="Country", null=False, blank=False)
 
@@ -67,12 +69,24 @@ class Address(models.Model):
 class Brand(models.Model):
     name = models.CharField("Name", max_length=250, null=False, blank=False)
 
+    def __str__(self):
+        return self.name
 
+    class Meta:
+        verbose_name = "Brand"
+        verbose_name_plural = "Brands"
+        ordering = ['name']  # Order by name
 
 class Category(models.Model):
     name = models.CharField("Name", max_length=250, null=False, blank=False)
 
+    def __str__(self):
+        return self.name
 
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+        ordering = ['name']  # Order by name
 
 
 
@@ -108,17 +122,20 @@ class Product(models.Model):
     name = models.CharField("Name", max_length=255, null=False, blank=False)
     description = models.TextField("Description", max_length=5000, null=True, blank=True)
     ram = models.CharField("RAM", max_length=50, null=True, blank=True)  # e.g., "8GB"
-    processor = models.CharField("Processor", max_length=255, null=True, blank=True)
+    processor = models.CharField("Processor", max_length=2000, null=True, blank=True)
     screen_size = models.CharField("Screen Size", max_length=50, null=True, blank=True)  # e.g., "15.6 inches"
     price = models.FloatField("Price", null=False, blank=False)
     storage = models.CharField("Storage", max_length=50, null=True, blank=True)  # e.g., "512GB SSD"
     battery_life = models.CharField("Battery Life", max_length=50, null=True, blank=True)  # e.g., "10 hours"
     quantity_available = models.IntegerField("Quantity Available", null=False, blank=False)
     image = models.ImageField("Product Image", upload_to='products/', null=True, blank=True)
-    warranty_period = models.CharField("Warranty Period", max_length=50, null=True, blank=True)  # e.g., "2 years"
+    warranty_period = models.CharField("Warranty Period", max_length=50, null=True, blank=True)  # e.g., "24 Months. "
     weight = models.FloatField("Weight", null=True, blank=True)  # in kilograms
     release_date = models.DateField("Release Date", null=True, blank=True)
-
+    gift = models.TextField("Gifts", max_length=5000, null=True, blank=True) # like Bag and mouse. 
+    fingerprint = models.BooleanField("Fingerprint Reader", null=True, blank=True)
+    DVD = models.BooleanField("DVD Reader", null=True, blank=True)
+    color = models.CharField("Color", max_length=500, null=True, blank=True)  
     # rating = models.FloatField("Rating", null=True, blank=True)  # 0.0 to 5.0
     # tags = models.CharField("Tags", max_length=255, null=True, blank=True)  # e.g., "mobile, fast"  
     
