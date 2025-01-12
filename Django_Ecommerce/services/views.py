@@ -90,11 +90,16 @@ class DeleteAddressAPIView(APIView):
 ####################################################################################################
 
 # Add CreditCard
+import random
 class AddCreditCardAPIView(APIView):
     def post(self, request, customer_id):
         # Include the customer ID in the request data
         data = request.data.copy()
         data['customer'] = customer_id
+        
+        # Generate a random balance between 300 and 10000
+        random_balance = round(random.uniform(300, 10000), 2)
+        data['balance'] = random_balance
 
         # Serialize the data
         serializer = CreditCardSerializer(data=data)
@@ -103,7 +108,8 @@ class AddCreditCardAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
+    
+    
 #  Editing a Credit Card
 class EditCreditCardAPIView(APIView):
     def put(self, request, credit_card_id):
@@ -134,3 +140,18 @@ class CustomerCreditCardsAPIView(APIView):
 
         serializer = CreditCardSerializer(credit_cards, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+
+
+# Delete Specific Credit Card
+class DeleteCreditCardAPIView(APIView):
+    def delete(self, request, credit_card_id):
+        try:
+            credit_card = CreditCard.objects.get(id=credit_card_id)
+        except CreditCard.DoesNotExist:
+            return Response({"error": "Credit card not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        credit_card.delete()
+        return Response({"message": "Credit card deleted successfully"}, status=status.HTTP_204_NO_CONTENT)

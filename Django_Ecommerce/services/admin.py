@@ -47,7 +47,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 # Customizing the CreditCard Admin
 class CreditCardAdmin(admin.ModelAdmin):
-    list_display = ('cardholder_name', 'card_number', 'expiration_date', 'customer')
+    list_display = ('cardholder_name', 'card_number', 'expiration_date', 'customer', 'balance')
     search_fields = ('cardholder_name', 'card_number', 'customer__user__first_name', 'customer__user__last_name')
     ordering = ('customer',)
 
