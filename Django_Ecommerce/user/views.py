@@ -206,6 +206,7 @@ class CustomerPasswordResetFormView(APIView):
             user = User.objects.get(pk=uid)
             if default_token_generator.check_token(user, token):
                 return render(request, 'reset_password.html', {'uidb64': uidb64, 'token': token})
+                #return render(request, 'e_commerce/reset_password.html', {'uidb64': uidb64, 'token': token})
             else:
                 return render(request, 'error.html', {'message': 'Invalid or expired token.'})
         except Exception as e:

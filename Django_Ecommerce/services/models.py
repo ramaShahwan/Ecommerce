@@ -67,7 +67,7 @@ class Address(models.Model):
 
 
 class Brand(models.Model):
-    name = models.CharField("Name", max_length=250, null=False, blank=False)
+    name = models.CharField("Name", max_length=250, null=False, blank=False, unique=True)
 
     def __str__(self):
         return self.name
@@ -78,7 +78,7 @@ class Brand(models.Model):
         ordering = ['name']  # Order by name
 
 class Category(models.Model):
-    name = models.CharField("Name", max_length=250, null=False, blank=False)
+    name = models.CharField("Name", max_length=250, null=False, blank=False,  unique=True)
 
     def __str__(self):
         return self.name
