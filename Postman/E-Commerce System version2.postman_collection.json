@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"street\": \"Al-Mazzeh Street\",\r\n    \"neighborhood\": \"Al-Mazzeh\",\r\n    \"building_number\": \"23\",\r\n    \"city\": \"Damascus\",\r\n    \"state\": \"Damascus\",\r\n    \"postal_code\": \"12345\",\r\n    \"country\": \"Syria\"\r\n}",
+					"raw": "{\r\n    \"street\": \"Al-Mazzeh Street\",\r\n    \"neighborhood\": \"Al-Mazzeh\",\r\n    \"building_number\": \"23\",\r\n    \"city\": \"Damascus\",\r\n    \"description\": \"Building No. 23 is located on Al-Mazzeh Street, after the court building, the first entrance on the left, on the 3rd floor.\",\r\n    \"postal_code\": \"12345\",\r\n    \"country\": \"Syria\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"street\": \"Al-Muhajirin Street\",\r\n    \"neighborhood\": \"Al-Muhajirin\",\r\n    \"building_number\": \"45\",\r\n    \"city\": \"Damascus\",\r\n    \"state\": \"Damascus\",\r\n    \"postal_code\": \"67890\",\r\n    \"country\": \"Syria\"\r\n}",
+					"raw": "{\r\n    \"street\": \"Al-Muhajirin Street\",\r\n    \"neighborhood\": \"Al-Muhajirin\",\r\n    \"building_number\": \"45\",\r\n    \"city\": \"Damascus\",\r\n    \"description\": \"Building No. 45 on the 1rd floor.\",\r\n    \"postal_code\": \"67890\",\r\n    \"country\": \"Syria\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -304,7 +304,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"card_number\": \"9876543210123456\",\r\n    \"cardholder_name\": \"Fatima Al-Sayed\",\r\n    \"expiration_date\": \"2026-05-31\",\r\n    \"cvv\": \"444\",\r\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\"\r\n}",
+					"raw": "{\r\n    \"card_number\": \"5556543210123555\",\r\n    \"cardholder_name\": \"Fatima Al-Sayed\",\r\n    \"expiration_date\": \"2026-05-31\",\r\n    \"cvv\": \"522\",\r\n    \"billing_address\": \"456 Al-Muhajirin St, Damascus, Syria\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

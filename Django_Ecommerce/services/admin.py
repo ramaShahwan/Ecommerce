@@ -15,8 +15,8 @@ class ComplaintAdmin(admin.ModelAdmin):
 
 # Customizing the Address Admin
 class AddressAdmin(admin.ModelAdmin):
-    list_display = ('customer', 'street', 'city', 'state', 'postal_code')
-    search_fields = ('customer__user__first_name', 'customer__user__last_name', 'city', 'state')
+    list_display = ('customer', 'street', 'city', 'description', 'postal_code')
+    search_fields = ('customer__user__first_name', 'customer__user__last_name', 'city', 'description')
     ordering = ('customer', 'city')
 
 # Customizing the Brand Admin
